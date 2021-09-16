@@ -1,1 +1,0 @@
-CreateObject("Wscript.Shell").Run "stretch.bat", 0, True
