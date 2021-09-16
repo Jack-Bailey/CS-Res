@@ -1,9 +1,8 @@
 @echo off
 
+echo Make sure your desktop and csgo resolutions exist in your nvidia control panel / whatever AMD uses otherwise it won't work
+
 :: remove old
-
-
-
 
 
 if exist bin\ (
