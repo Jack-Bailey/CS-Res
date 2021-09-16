@@ -1,19 +1,21 @@
 @echo off
 
-echo Make sure your desktop and csgo resolutions exist in your nvidia control panel / whatever AMD uses otherwise it won't work
+set defaultSteam="C:\Program Files (x86)\Steam\steam.exe"
+set defaultCsgo="C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo.exe"
 
-:: remove old
+set /p autoScan="Automatically scan for steam and game installations? (Y/N)? "
+echo. 
 
-
-if exist bin\ (
-	del /f /s /q bin 1>nul
-	rmdir /s /q bin 1>nul
+if "%autoScan%" == "N" (
+	set defaultSteam="empty"
+	set defaultCsgo="empty"
+)
+if "%autoScan%" == "n" (
+	set defaultSteam="empty"
+	set defaultCsgo="empty"
 )
 
-if exist CSGO.lnk (
-	del CSGO.lnk 1>nul
-)
-
+REM remove old
 
 if exist resources\ (
 	goto :steamDir
@@ -22,40 +24,51 @@ if exist resources\ (
 	goto :end
 )
 
-:: Locations
+REM Locations
 
 :steamdir
 set filedir=%~dp0
 
-set /p steam="Steam.exe location: "
+if exist %defaultSteam% (
+	set steam=%defaultSteam%
+) else (
+	set /p steam="Steam.exe location: "
+)
+
 if exist %steam% (
 	echo Successfully found Steam
 	echo.
 	goto :csgoDir
 ) else (
+	set steam=%steam%\steam.exe
 	echo Cannot find steam... Make sure you've linked the exe and not the steam folder
 	goto :steamdir
 )
 
 :csgoDir
 
-set /p csgo="csgo.exe location: "
+if exist %defaultCsgo% (
+	set csgo=%defaultCsgo%
+) else (
+	set /p csgo="csgo.exe location: "
+)
+
 if exist %csgo% (
 	echo Successfully found CSGO
 	echo.
 	goto :resDir
 ) else (
+	set csgo=%csgo%\csgo.exe
 	echo Cannot find csgo... Make sure you've linked the exe and not the csgo folder
 	goto :csgoDir
 )
 
 :resDir
 
-echo Desktop resolution setup: (Not in Game)
-
-
+echo Desktop/Standard resolution setup: (Not in Game)
 
 :origRes
+
 echo.
 set /p string="Res (e.g. 1920x1080 144): "
 for /F "tokens=1,2,3 delims=x " %%a in ("%string%") do (
@@ -85,6 +98,11 @@ if [%gWidth%] == [] echo Width is not defined & GOTO :origRes
 if [%gHeight%] == [] echo Height is not defined &  GOTO :origRes
 if [%gRefresh%] == [] echo Refresh is not defined &  GOTO :origRes
 
+if exist bin\ (
+	del /f /s /q bin 1>nul
+	rmdir /s /q bin 1>nul
+)
+
 
 mkdir bin
 echo @echo OFF > bin\csgo.bat
@@ -98,6 +116,10 @@ echo CreateObject("Wscript.Shell").Run "%filedir%bin\csgo.bat", 0, True > bin\si
 
 echo [+] Created Silent file
 echo [+] Downloaded Icon
+
+if exist CSGO.lnk (
+	del CSGO.lnk 1>nul
+)
 
 (
 	echo Dim objShortcut, objShell
@@ -122,6 +144,8 @@ echo.
 echo ## Completed ##
 echo.
 echo Search or find "CSGO" in your start menu to pin it to your taskbar or start menu or put the shortcut on your desktop
+echo .
+echo Make sure your desktop and csgo resolutions exist in your nvidia control panel / whatever AMD uses otherwise it won't work
 
 echo Press ENTER to finish
 :end
