@@ -1,0 +1,20 @@
+[09/16/2021 - 03:38:25 PM] App: Started.
+[09/16/2021 - 03:38:25 PM] Status: Program steam.exe started.
+[09/16/2021 - 03:39:25 PM] Warning: Configuration file (cursorlock.ini) not found; using defaults.
+[09/16/2021 - 03:39:25 PM] Error: Not enough arguments to start.
+[09/16/2021 - 03:39:50 PM] App: Started.
+[09/16/2021 - 03:39:50 PM] Status: Program steam.exe started.
+[09/16/2021 - 03:39:56 PM] Status: Locked.
+[09/16/2021 - 03:40:14 PM] Status: Unlocked (lost focus).
+[09/16/2021 - 03:40:14 PM] Status: Closing (lockapp closed).
+[09/16/2021 - 03:40:14 PM] Status: Unlocked (app closing).
+[09/16/2021 - 03:40:14 PM] App: Closing.
+[09/16/2021 - 03:45:10 PM] App: Started.
+[09/16/2021 - 03:45:10 PM] Status: Program steam.exe started.
+[09/16/2021 - 03:45:16 PM] Status: Locked.
+[09/16/2021 - 03:45:26 PM] Status: Unlocked (lost focus).
+[09/16/2021 - 03:45:32 PM] Status: Locked.
+[09/16/2021 - 03:45:33 PM] Status: Unlocked (lost focus).
+[09/16/2021 - 03:45:33 PM] Status: Closing (lockapp closed).
+[09/16/2021 - 03:45:33 PM] Status: Unlocked (app closing).
+[09/16/2021 - 03:45:33 PM] App: Closing.
