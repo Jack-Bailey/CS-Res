@@ -19,7 +19,7 @@ You won't get banned from using this as it's just a batch script and a well know
 
 ## Credits
 
-[QRes](https://sourceforge.net/projects/qres/files/latest/download)
-[CursorLock](http://www.snakebytestudios.com/download/cursor-lock/)
+* [QRes](https://sourceforge.net/projects/qres/files/latest/download)
+* [CursorLock](http://www.snakebytestudios.com/download/cursor-lock/)
 
-Everything else except csgo.ico was made by me
+Everything else except csgo.ico (Credit to VaLVe) was made by me
