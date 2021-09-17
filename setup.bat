@@ -107,7 +107,7 @@ if exist bin\ (
 mkdir bin
 echo @echo OFF > bin\csgo.bat
 echo "..\resources\qres\qres.exe" x=%gWidth% y=%hHeight% f=%gRefresh% >> bin\csgo.bat
-echo "..\resources\CursorLock.exe" /O:"%steam%" /P:"-applaunch 730" /A:"%csgo%" >> bin\csgo.bat
+echo "..\resources\CursorLock.exe" /O:%steam% /P:"-applaunch 730" /A:%csgo% >> bin\csgo.bat
 echo "..\resources\qres\qres.exe" x=%oWidth% y=%oHeight% f=%oRefresh% >> bin\csgo.bat
 
 echo. 
